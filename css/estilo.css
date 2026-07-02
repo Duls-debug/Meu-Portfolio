@@ -1,0 +1,330 @@
+/* ==========================================
+   1. CONFIGURAÇÕES GERAIS E PALETA MODERNIZADA
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f8fafc; /* Fundo off-white mais moderno */
+    color: #1e293b; /* Texto cinza escuro, menos agressivo que o preto */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   2. CABEÇALHO E MENU (PREMIUM & CLEAN)
+   ========================================== */
+header {
+    background-color: #0f172a; /* Slate escuro elegante */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo h2 {
+    color: #38bdf8; /* Azul neon/tecnológico */
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 15px;
+}
+
+nav ul li a {
+    color: #94a3b8; /* Cinza claro discreto */
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    transition: all 0.25s ease;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+nav ul li a.active {
+    background-color: #0284c7; /* Azul destaque */
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ==========================================
+   3. ÁREA DE CONTEÚDO PRINCIPAL (LAYOUT)
+   ========================================== */
+main {
+    flex: 1;
+    padding: 50px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    width: 100%;
+    max-width: 850px;
+    background: #e1dfdf !important;
+    padding: 45px;
+    border-radius: 12px; /* Cantos mais arredondados */
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+section h1 {
+    margin-bottom: 18px;
+    color: #0f172a;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+section p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+/* Botões Estilizados */
+.btn {
+    display: inline-block;
+    background-color: #0284c7;
+    color: #fff;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #0369a1;
+    transform: translateY(-1px); /* Sutil efeito de levitar ao passar o mouse */
+    box-shadow: 0 6px 16px rgba(2, 132, 199, 0.3);
+}
+
+/* Estilização Premium da Página de Projetos (Cards) */
+.container-projetos {
+    display: flex;
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.card-projeto {
+    flex: 1;
+    background: #e9e7e7;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.card-projeto:hover {
+    transform: translateY(-4px); /* Card flutua suavemente */
+    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+}
+
+.card-projeto h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+/* Estilização do Formulário de Contato */
+form {
+    margin-top: 25px;
+}
+
+.campo {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #f8fafc;
+}
+
+.campo input, .campo textarea {
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #0f172a;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+/* O foco azul sutil interage perfeitamente com o seu script.js */
+.campo input:focus, .campo textarea:focus {
+    border-color: #38bdf8;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* ==========================================
+   4. RODAPÉ
+   ========================================== */
+footer {
+    background-color: #0f172a;
+    color: #64748b;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.85rem;
+    border-top: 1px solid #1e293b;
+    margin-top: auto;
+}
+
+/* ==========================================
+   5. DESIGN RESPONSIVO (MEDIA QUERIES)
+   ========================================== */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    nav {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 5px;
+    }
+    
+    nav ul li a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding: 30px 4%;
+    }
+
+    section {
+        padding: 30px 20px;
+    }
+
+    .container-projetos {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+/* ==========================================
+   6. ANIMAÇÃO DE FUNDO: ORBES DE IA FLUTUANDO POR TRÁS DO CARD
+   ========================================== */
+body {
+    background-color: #0b0f19; /* Fundo dark profundo para dar contraste com as luzes */
+    position: relative;
+    overflow-x: hidden; /* Evita que as bolas gerem barra de rolagem lateral */
+}
+
+/* Criação da Bola 1 (Azul/Ciano Neon) */
+body::before {
+    content: '';
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.45) 0%, transparent 70%);
+    filter: blur(80px); /* Deixa a bola super desfocada e suave */
+    z-index: -2; /* Garante que fique atrás de tudo */
+    animation: flutuarBolaUm 25s ease-in-out infinite alternate; /* Deixamos mais lento (25s) para suavizar na troca de página */
+}
+
+/* Criação da Bola 2 (Roxo/Violeta de IA) */
+body::after {
+    content: '';
+    position: fixed;
+    bottom: -10%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%);
+    filter: blur(90px);
+    z-index: -2;
+    animation: flutuarBolaDois 28s ease-in-out infinite alternate; /* Tempo longo para transição discreta */
+}
+
+/* Ajuste dos Cards Grandes (Section) para ficarem perfeitos no fundo escuro */
+section {
+    background: rgba(255, 255, 255, 0.04) !important; /* Fundo translúcido escuro */
+    backdrop-filter: blur(16px); /* Efeito de vidro jateado premium */
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Ajuste das cores dos textos principais para o tema Dark */
+section h1, section h3 a {
+    color: #f8fafc !important; /* Títulos em branco */
+}
+
+section p {
+    color: #cbd5e1 !important; /* Textos em cinza claro confortável para leitura */
+}
+
+/* Ajuste dos cards pequenos de projetos para destacar no vidro */
+.card-projeto {
+    background: rgba(15, 23, 42, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ==========================================
+   7. COREOGRAFIA DE MOVIMENTO COBRINDO O CENTRO
+   ========================================== */
+@keyframes flutuarBolaUm {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(30vw, 25vh) scale(1.2); /* Força a bola a ir bem para o meio da tela, atrás do card */
+    }
+    100% {
+        transform: translate(15vw, 45vh) scale(0.9);
+    }
+}
+
+@keyframes flutuarBolaDois {
+    0% {
+        transform: translate(0, 0) scale(0.9);
+    }
+    50% {
+        transform: translate(-35vw, -30vh) scale(1.15); /* Força a outra bola a cruzar o card no sentido oposto */
+    }
+    100% {
+        transform: translate(-15vw, -50vh) scale(1);
+    }
+}

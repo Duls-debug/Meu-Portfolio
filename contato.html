@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Douglas Novais | Portfólio de Engenharia de Software</title>
+    <meta name="description" content="Portfólio acadêmico e profissional de Douglas Novais, estudante de Engenharia de Software. Conheça meus projetos.">
+    
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h2>Douglas Novais</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre Mim</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contato-secao">
+            <h1>Entre em Contato</h1>
+            <p>Preencha os campos abaixo para enviar uma mensagem diretamente para mim.</p>
+            
+            <form id="formContato">
+                <div class="campo">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+                
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+                    <input type="text" id="email" name="email">
+                </div>
+                
+                <div class="campo">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Douglas Novais. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
