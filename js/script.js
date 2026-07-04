@@ -1,23 +1,37 @@
 // Garante que o código jQuery só rode após a página carregar completamente
 $(document).ready(function() {
 
-    /* ==========================================================
-       EFEITO INTERATIVO 1: Animação de Entrada nos Cards de Projetos
+  /* ==========================================================
+       EFEITO INTERATIVO 1: Animação de Entrada e Hover nos Cards
        ========================================================== */
-    // Esconde os cards assim que a página carrega e faz eles surgirem suavemente
-    $('.card-projeto').hide().fadeIn(1200);
+    // Faz o card surgir subindo a opacidade e voltando ao tamanho normal ao mesmo tempo
+    $('.card-projeto').animate({
+        opacity: 1,
+        parseFloat: 1 // Truque para o jQuery entender o encadeamento
+    }, 600, function() {
+    });
+
+    // Mantém o efeito de foco ao passar o mouse
+    $('.card-projeto').hover(
+        function() {
+            $(this).siblings('.card-projeto').css('opacity', '0.6');
+        }, 
+        function() {
+            $('.card-projeto').css('opacity', '1');
+        }
+    );
 
 
-    /* ==========================================================
+   /* ==========================================================
        EFEITO INTERATIVO 2: Destaque Visual nos Campos do Formulário
        ========================================================== */
-    // Quando o usuário clica em um campo, muda o fundo. Quando sai, volta ao normal.
+    // Quando o usuário clica em um campo, destaca com transparência. Quando sai, volta ao normal.
     $('input, textarea').focus(function() {
-        $(this).css('background-color', '#e8f4fd');
+        $(this).css('background-color', 'rgba(56, 189, 248, 0.15)'); // Um azul neon bem sutil e transparente
     });
     
     $('input, textarea').blur(function() {
-        $(this).css('background-color', '#fcfcfc');
+        $(this).css('background-color', 'rgba(15, 23, 42, 0.6)'); // Volta para o fundo escuro original do card
     });
 
 
@@ -25,7 +39,7 @@ $(document).ready(function() {
        VALIDAÇÃO DO FORMULÁRIO DE CONTATO
        ========================================================== */
     $('#formContato').submit(function(event) {
-        // Interrompe o envio padrão do formulário para podermos validar antes
+        // Interrompe o envio padrão do formulário para poder validar antes
         event.preventDefault();
 
         // Captura os valores digitados pelo usuário
@@ -62,10 +76,8 @@ $(document).ready(function() {
         }
 
         // Se passar por todas as validações, exibe a mensagem de sucesso
-        alert("Sucesso! Sua mensagem foi validada e enviada.");
+        alert("Sucesso! Sua mensagem foi validada e está sendo enviada.");
         
-        // Limpa o formulário após o envio
-        this.reset();
+        this.submit(); 
     });
-
 });

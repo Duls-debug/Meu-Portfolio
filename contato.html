@@ -29,7 +29,9 @@
             <h1>Entre em Contato</h1>
             <p>Preencha os campos abaixo para enviar uma mensagem diretamente para mim.</p>
             
-            <form id="formContato">
+            <form id="formContato" action="https://api.web3forms.com/submit" method="POST">
+
+            <input type="hidden" name="access_key" value="3eb4d55d-9524-46ae-ab20-7e1be165bc63">
                 <div class="campo">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome">
